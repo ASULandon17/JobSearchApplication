@@ -1,0 +1,514 @@
+2025-10-01 20:54:43.573 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - WebScraper initialized with 4 user agents
+2025-10-01 20:54:43.575 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Starting job search for term: 'junior software engineer'
+2025-10-01 20:54:43.576 [ForkJoinPool.commonPool-worker-3] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape GitHub Jobs (attempt 1/3)
+2025-10-01 20:54:43.576 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Indeed (attempt 1/3)
+2025-10-01 20:54:43.577 [ForkJoinPool.commonPool-worker-6] INFO  com.jobsearch.scraper.WebScraper - Generating demo jobs for testing
+2025-10-01 20:54:43.577 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Remote.co (attempt 1/3)
+2025-10-01 20:54:43.577 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape WeWorkRemotely (attempt 1/3)
+2025-10-01 20:54:43.577 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - Scraping GitHub Jobs with URL: https://github.com/search?q=junior+software+engineer&type=issues&s=created&o=desc
+2025-10-01 20:54:43.577 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - Scraping Remote.co
+2025-10-01 20:54:43.577 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - Scraping Indeed with URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:43.578 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://www.indeed.com/jobs?q=junior+software+engineer&l= with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:43.578 [ForkJoinPool.commonPool-worker-5] INFO  com.jobsearch.scraper.WebScraper - Scraping WeWorkRemotely
+2025-10-01 20:54:43.578 [ForkJoinPool.commonPool-worker-3] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://github.com/search?q=junior+software+engineer&type=issues&s=created&o=desc with User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:43.578 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://remote.co/remote-jobs/developer/ with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edge/119.0.0.0
+2025-10-01 20:54:43.579 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Software Engineer
+2025-10-01 20:54:43.579 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:43.579 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Software Developer Entry Level
+2025-10-01 20:54:43.579 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Full Stack Developer
+2025-10-01 20:54:43.579 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Associate Software Engineer
+2025-10-01 20:54:43.579 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Backend Developer
+2025-10-01 20:54:43.580 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Frontend Developer (Junior)
+2025-10-01 20:54:43.580 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Software Engineer I
+2025-10-01 20:54:43.580 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior DevOps Engineer
+2025-10-01 20:54:43.580 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Entry Level Software Developer
+2025-10-01 20:54:43.580 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Java Developer
+2025-10-01 20:54:43.580 [ForkJoinPool.commonPool-worker-6] INFO  com.jobsearch.scraper.WebScraper - Generated 10 demo jobs
+2025-10-01 20:54:43.965 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Error scraping Indeed: HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:43.966 [ForkJoinPool.commonPool-worker-1] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Indeed (attempt 1/3): HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:43.966 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Indeed (attempt 2/3)
+2025-10-01 20:54:43.966 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2160ms before retry
+2025-10-01 20:54:43.983 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Error scraping WeWorkRemotely: HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer
+2025-10-01 20:54:43.983 [ForkJoinPool.commonPool-worker-5] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape WeWorkRemotely (attempt 1/3): HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer
+2025-10-01 20:54:43.983 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape WeWorkRemotely (attempt 2/3)
+2025-10-01 20:54:43.984 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2014ms before retry
+2025-10-01 20:54:44.381 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - Successfully scraped 0 jobs from GitHub Jobs
+2025-10-01 20:54:45.999 [ForkJoinPool.commonPool-worker-5] INFO  com.jobsearch.scraper.WebScraper - Scraping WeWorkRemotely
+2025-10-01 20:54:45.999 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:46.113 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Error scraping WeWorkRemotely: HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer
+2025-10-01 20:54:46.113 [ForkJoinPool.commonPool-worker-5] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape WeWorkRemotely (attempt 2/3): HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer
+2025-10-01 20:54:46.113 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape WeWorkRemotely (attempt 3/3)
+2025-10-01 20:54:46.114 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2123ms before retry
+2025-10-01 20:54:46.127 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - Scraping Indeed with URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:46.127 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://www.indeed.com/jobs?q=junior+software+engineer&l= with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:46.329 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Error scraping Indeed: HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:46.329 [ForkJoinPool.commonPool-worker-1] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Indeed (attempt 2/3): HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:46.329 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Indeed (attempt 3/3)
+2025-10-01 20:54:46.330 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2523ms before retry
+2025-10-01 20:54:48.238 [ForkJoinPool.commonPool-worker-5] INFO  com.jobsearch.scraper.WebScraper - Scraping WeWorkRemotely
+2025-10-01 20:54:48.238 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer with User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:48.357 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Error scraping WeWorkRemotely: HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer
+2025-10-01 20:54:48.358 [ForkJoinPool.commonPool-worker-5] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape WeWorkRemotely (attempt 3/3): HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+engineer
+2025-10-01 20:54:48.358 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Max retries reached for WeWorkRemotely. Giving up.
+2025-10-01 20:54:48.854 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - Scraping Indeed with URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:48.854 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://www.indeed.com/jobs?q=junior+software+engineer&l= with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:54:48.994 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Error scraping Indeed: HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:48.994 [ForkJoinPool.commonPool-worker-1] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Indeed (attempt 3/3): HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+engineer&l=
+2025-10-01 20:54:48.994 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Max retries reached for Indeed. Giving up.
+2025-10-01 20:54:51.642 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Error scraping Remote.co: Read timed out
+2025-10-01 20:54:51.642 [ForkJoinPool.commonPool-worker-4] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Remote.co (attempt 1/3): Read timed out
+2025-10-01 20:54:51.643 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Remote.co (attempt 2/3)
+2025-10-01 20:54:51.643 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2096ms before retry
+2025-10-01 20:54:53.740 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - Scraping Remote.co
+2025-10-01 20:54:53.740 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://remote.co/remote-jobs/developer/ with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:55:01.483 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Error scraping Remote.co: Read timed out
+2025-10-01 20:55:01.483 [ForkJoinPool.commonPool-worker-4] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Remote.co (attempt 2/3): Read timed out
+2025-10-01 20:55:01.484 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Remote.co (attempt 3/3)
+2025-10-01 20:55:01.484 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2368ms before retry
+2025-10-01 20:55:03.853 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - Scraping Remote.co
+2025-10-01 20:55:03.853 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://remote.co/remote-jobs/developer/ with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 20:55:11.578 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Error scraping Remote.co: Read timed out
+2025-10-01 20:55:11.578 [ForkJoinPool.commonPool-worker-4] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Remote.co (attempt 3/3): Read timed out
+2025-10-01 20:55:11.578 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Max retries reached for Remote.co. Giving up.
+2025-10-01 20:55:11.580 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Total jobs collected: 10
+2025-10-01 20:55:11.580 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Engineer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.580 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Engineer'
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Engineer' scored: Relevance=10, Reputation=7
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Developer Entry Level' for search term: 'junior software engineer'
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Developer Entry Level' scored: Relevance=7, Reputation=8
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Full Stack Developer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Full Stack Developer' scored: Relevance=7, Reputation=8
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Associate Software Engineer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.581 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Associate Software Engineer' scored: Relevance=10, Reputation=9
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Backend Developer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Backend Developer' scored: Relevance=7, Reputation=7
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Frontend Developer (Junior)' for search term: 'junior software engineer'
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Frontend Developer (Junior)' scored: Relevance=7, Reputation=8
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Engineer I' for search term: 'junior software engineer'
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 20:55:11.582 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Engineer I' scored: Relevance=10, Reputation=8
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior DevOps Engineer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior DevOps Engineer' scored: Relevance=10, Reputation=7
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Entry Level Software Developer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Entry Level Software Developer' scored: Relevance=7, Reputation=9
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Java Developer' for search term: 'junior software engineer'
+2025-10-01 20:55:11.584 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 20:55:11.585 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Java Developer' scored: Relevance=7, Reputation=8
+2025-10-01 20:55:11.585 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Jobs scored and sorted. Returning 10 jobs
+2025-10-01 21:25:35.851 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - WebScraper initialized with 4 user agents
+2025-10-01 21:25:35.853 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Starting job search for term: 'junior software developer'
+2025-10-01 21:25:35.854 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Indeed (attempt 1/3)
+2025-10-01 21:25:35.855 [ForkJoinPool.commonPool-worker-6] INFO  com.jobsearch.scraper.WebScraper - Generating demo jobs for testing
+2025-10-01 21:25:35.855 [ForkJoinPool.commonPool-worker-3] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape GitHub Jobs (attempt 1/3)
+2025-10-01 21:25:35.855 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Remote.co (attempt 1/3)
+2025-10-01 21:25:35.855 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - Scraping Remote.co
+2025-10-01 21:25:35.855 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape WeWorkRemotely (attempt 1/3)
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - Scraping GitHub Jobs with URL: https://github.com/search?q=junior+software+developer&type=issues&s=created&o=desc
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - Scraping Indeed with URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://remote.co/remote-jobs/developer/ with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edge/119.0.0.0
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-5] INFO  com.jobsearch.scraper.WebScraper - Scraping WeWorkRemotely
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-3] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://github.com/search?q=junior+software+developer&type=issues&s=created&o=desc with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://www.indeed.com/jobs?q=junior+software+developer&l= with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Software Engineer
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Software Developer Entry Level
+2025-10-01 21:25:35.856 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Full Stack Developer
+2025-10-01 21:25:35.857 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Associate Software Engineer
+2025-10-01 21:25:35.857 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Backend Developer
+2025-10-01 21:25:35.857 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Frontend Developer (Junior)
+2025-10-01 21:25:35.857 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Software Engineer I
+2025-10-01 21:25:35.857 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior DevOps Engineer
+2025-10-01 21:25:35.858 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Entry Level Software Developer
+2025-10-01 21:25:35.858 [ForkJoinPool.commonPool-worker-6] DEBUG com.jobsearch.scraper.WebScraper - Generated demo job: Junior Java Developer
+2025-10-01 21:25:35.858 [ForkJoinPool.commonPool-worker-6] INFO  com.jobsearch.scraper.WebScraper - Generated 10 demo jobs
+2025-10-01 21:25:36.295 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Error scraping Indeed: HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:36.295 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Error scraping WeWorkRemotely: HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer
+2025-10-01 21:25:36.296 [ForkJoinPool.commonPool-worker-1] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Indeed (attempt 1/3): HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:36.296 [ForkJoinPool.commonPool-worker-5] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape WeWorkRemotely (attempt 1/3): HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer
+2025-10-01 21:25:36.296 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Indeed (attempt 2/3)
+2025-10-01 21:25:36.296 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape WeWorkRemotely (attempt 2/3)
+2025-10-01 21:25:36.296 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Waiting 1837ms before retry
+2025-10-01 21:25:36.296 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Waiting 1314ms before retry
+2025-10-01 21:25:36.748 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - Successfully scraped 0 jobs from GitHub Jobs
+2025-10-01 21:25:37.612 [ForkJoinPool.commonPool-worker-5] INFO  com.jobsearch.scraper.WebScraper - Scraping WeWorkRemotely
+2025-10-01 21:25:37.612 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:37.726 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Error scraping WeWorkRemotely: HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer
+2025-10-01 21:25:37.726 [ForkJoinPool.commonPool-worker-5] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape WeWorkRemotely (attempt 2/3): HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer
+2025-10-01 21:25:37.726 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape WeWorkRemotely (attempt 3/3)
+2025-10-01 21:25:37.726 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2895ms before retry
+2025-10-01 21:25:38.137 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - Scraping Indeed with URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:38.137 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://www.indeed.com/jobs?q=junior+software+developer&l= with User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:38.266 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Error scraping Indeed: HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:38.266 [ForkJoinPool.commonPool-worker-1] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Indeed (attempt 2/3): HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:38.266 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Indeed (attempt 3/3)
+2025-10-01 21:25:38.266 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Waiting 1801ms before retry
+2025-10-01 21:25:40.069 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - Scraping Indeed with URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:40.069 [ForkJoinPool.commonPool-worker-1] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://www.indeed.com/jobs?q=junior+software+developer&l= with User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:40.265 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Error scraping Indeed: HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:40.265 [ForkJoinPool.commonPool-worker-1] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Indeed (attempt 3/3): HTTP 403 error for URL: https://www.indeed.com/jobs?q=junior+software+developer&l=
+2025-10-01 21:25:40.266 [ForkJoinPool.commonPool-worker-1] ERROR com.jobsearch.scraper.WebScraper - Max retries reached for Indeed. Giving up.
+2025-10-01 21:25:40.625 [ForkJoinPool.commonPool-worker-5] INFO  com.jobsearch.scraper.WebScraper - Scraping WeWorkRemotely
+2025-10-01 21:25:40.625 [ForkJoinPool.commonPool-worker-5] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:40.754 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Error scraping WeWorkRemotely: HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer
+2025-10-01 21:25:40.754 [ForkJoinPool.commonPool-worker-5] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape WeWorkRemotely (attempt 3/3): HTTP 403 error for URL: https://weworkremotely.com/remote-jobs/search?term=junior+software+developer
+2025-10-01 21:25:40.755 [ForkJoinPool.commonPool-worker-5] ERROR com.jobsearch.scraper.WebScraper - Max retries reached for WeWorkRemotely. Giving up.
+2025-10-01 21:25:43.831 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Error scraping Remote.co: Read timed out
+2025-10-01 21:25:43.832 [ForkJoinPool.commonPool-worker-4] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Remote.co (attempt 1/3): Read timed out
+2025-10-01 21:25:43.832 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Remote.co (attempt 2/3)
+2025-10-01 21:25:43.832 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Waiting 1985ms before retry
+2025-10-01 21:25:45.818 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - Scraping Remote.co
+2025-10-01 21:25:45.818 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://remote.co/remote-jobs/developer/ with User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:25:53.616 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Error scraping Remote.co: Read timed out
+2025-10-01 21:25:53.616 [ForkJoinPool.commonPool-worker-4] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Remote.co (attempt 2/3): Read timed out
+2025-10-01 21:25:53.616 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Attempting to scrape Remote.co (attempt 3/3)
+2025-10-01 21:25:53.616 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Waiting 2573ms before retry
+2025-10-01 21:25:56.190 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - Scraping Remote.co
+2025-10-01 21:25:56.190 [ForkJoinPool.commonPool-worker-4] DEBUG com.jobsearch.scraper.WebScraper - Fetching URL: https://remote.co/remote-jobs/developer/ with User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+2025-10-01 21:26:03.934 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Error scraping Remote.co: Read timed out
+2025-10-01 21:26:03.934 [ForkJoinPool.commonPool-worker-4] WARN  com.jobsearch.scraper.WebScraper - Failed to scrape Remote.co (attempt 3/3): Read timed out
+2025-10-01 21:26:03.934 [ForkJoinPool.commonPool-worker-4] ERROR com.jobsearch.scraper.WebScraper - Max retries reached for Remote.co. Giving up.
+2025-10-01 21:26:03.935 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Total jobs collected: 10
+2025-10-01 21:26:03.936 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Engineer' for search term: 'junior software developer'
+2025-10-01 21:26:03.936 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.936 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Engineer' scored: Relevance=10, Reputation=7
+2025-10-01 21:26:03.936 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Developer Entry Level' for search term: 'junior software developer'
+2025-10-01 21:26:03.937 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.937 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Developer Entry Level' scored: Relevance=10, Reputation=8
+2025-10-01 21:26:03.937 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Full Stack Developer' for search term: 'junior software developer'
+2025-10-01 21:26:03.937 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.937 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Full Stack Developer' scored: Relevance=10, Reputation=8
+2025-10-01 21:26:03.937 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Associate Software Engineer' for search term: 'junior software developer'
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Associate Software Engineer' scored: Relevance=5, Reputation=9
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Backend Developer' for search term: 'junior software developer'
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Backend Developer' scored: Relevance=10, Reputation=8
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Frontend Developer (Junior)' for search term: 'junior software developer'
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Frontend Developer (Junior)' scored: Relevance=10, Reputation=8
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Engineer I' for search term: 'junior software developer'
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Engineer I' scored: Relevance=5, Reputation=8
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior DevOps Engineer' for search term: 'junior software developer'
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:26:03.938 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior DevOps Engineer' scored: Relevance=6, Reputation=8
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Entry Level Software Developer' for search term: 'junior software developer'
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Entry Level Software Developer' scored: Relevance=10, Reputation=8
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Java Developer' for search term: 'junior software developer'
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Java Developer' scored: Relevance=10, Reputation=7
+2025-10-01 21:26:03.939 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Jobs scored and sorted. Returning 10 jobs
+2025-10-01 21:35:45.835 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.api.JobBoardAPIClient - JobBoardAPIClient initialized
+2025-10-01 21:35:45.838 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - WebScraper initialized with API and HN scrapers
+2025-10-01 21:35:45.839 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - === Starting comprehensive job search for: 'junior software engineer' ===
+2025-10-01 21:35:45.841 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - >>> Starting search from: Remotive API
+2025-10-01 21:35:45.841 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - >>> Starting search from: HackerNews
+2025-10-01 21:35:45.841 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - >>> Starting search from: Demo Data
+2025-10-01 21:35:45.841 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.api.JobBoardAPIClient - Calling Remotive API: https://remotive.com/api/remote-jobs?search=junior+software+engineer
+2025-10-01 21:35:45.841 [ForkJoinPool.commonPool-worker-2] INFO  c.j.scraper.HackerNewsScraper - Scraping HackerNews Who is Hiring
+2025-10-01 21:35:45.841 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - Generating enhanced demo jobs
+2025-10-01 21:35:45.847 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - Generated 15 enhanced demo jobs
+2025-10-01 21:35:45.847 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - >>> Successfully retrieved 15 jobs from Demo Data
+2025-10-01 21:35:46.480 [ForkJoinPool.commonPool-worker-2] INFO  c.j.scraper.HackerNewsScraper - Found latest hiring thread: https://news.ycombinator.com/item?id=45438503
+2025-10-01 21:35:46.836 [ForkJoinPool.commonPool-worker-2] ERROR com.jobsearch.scraper.WebScraper - >>> Error searching HackerNews: Range [0, 12) out of bounds for length 11
+2025-10-01 21:35:50.466 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.api.JobBoardAPIClient - Retrieved 1 jobs from Remotive API
+2025-10-01 21:35:50.466 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - >>> Successfully retrieved 1 jobs from Remotive API
+2025-10-01 21:35:50.467 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - === Total jobs collected: 16 ===
+2025-10-01 21:35:50.468 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - Jobs by source: {Remotive=1, Demo Data=15}
+2025-10-01 21:35:50.468 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Senior Software Engineer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.469 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 3 of 3 terms matched
+2025-10-01 21:35:50.470 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Senior Software Engineer' scored: Relevance=10, Reputation=8
+2025-10-01 21:35:50.470 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Engineer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.470 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Engineer'
+2025-10-01 21:35:50.471 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Engineer' scored: Relevance=10, Reputation=9
+2025-10-01 21:35:50.471 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Developer - Entry Level' for search term: 'junior software engineer'
+2025-10-01 21:35:50.471 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.471 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Developer - Entry Level' scored: Relevance=8, Reputation=9
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Full Stack Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Full Stack Developer' scored: Relevance=9, Reputation=8
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Associate Software Engineer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Associate Software Engineer' scored: Relevance=10, Reputation=9
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Backend Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Backend Developer' scored: Relevance=9, Reputation=8
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Frontend Developer (Junior)' for search term: 'junior software engineer'
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.472 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Frontend Developer (Junior)' scored: Relevance=8, Reputation=7
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Engineer I' for search term: 'junior software engineer'
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Engineer I' scored: Relevance=10, Reputation=7
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior DevOps Engineer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior DevOps Engineer' scored: Relevance=10, Reputation=9
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Entry Level Software Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Entry Level Software Developer' scored: Relevance=8, Reputation=8
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Java Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Java Developer' scored: Relevance=8, Reputation=8
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Python Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Python Developer' scored: Relevance=8, Reputation=9
+2025-10-01 21:35:50.473 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Software Development Engineer I' for search term: 'junior software engineer'
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Software Development Engineer I' scored: Relevance=10, Reputation=8
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Mobile Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Mobile Developer' scored: Relevance=8, Reputation=7
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Associate Developer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 0 of 3 terms matched
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Associate Developer' scored: Relevance=4, Reputation=8
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Programmer' for search term: 'junior software engineer'
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:35:50.474 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Programmer' scored: Relevance=10, Reputation=8
+2025-10-01 21:35:50.475 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - === Jobs scored and sorted. Returning 16 jobs ===
+2025-10-01 21:46:30.971 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.api.JobBoardAPIClient - JobBoardAPIClient initialized
+2025-10-01 21:46:30.974 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - WebScraper initialized - Production mode (no demo data)
+2025-10-01 21:46:30.974 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ╔════════════════════════════════════════════════════════════╗
+2025-10-01 21:46:30.974 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ║  STARTING JOB SEARCH: 'junior software developer'
+2025-10-01 21:46:30.975 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ╚════════════════════════════════════════════════════════════╝
+2025-10-01 21:46:30.976 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - → Starting search from: Remotive API
+2025-10-01 21:46:30.976 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - → Starting search from: Adzuna API
+2025-10-01 21:46:30.977 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - → Starting search from: HackerNews
+2025-10-01 21:46:30.977 [ForkJoinPool.commonPool-worker-4] INFO  c.j.scraper.HackerNewsScraper - Scraping HackerNews Who is Hiring
+2025-10-01 21:46:30.977 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.api.JobBoardAPIClient - Calling Adzuna API for: junior software developer
+2025-10-01 21:46:30.977 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.api.JobBoardAPIClient - Calling Remotive API for: junior software developer
+2025-10-01 21:46:30.978 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - Initializing Chrome WebDriver...
+2025-10-01 21:46:31.447 [ForkJoinPool.commonPool-worker-4] INFO  c.j.scraper.HackerNewsScraper - Found latest hiring thread: https://news.ycombinator.com/item?id=45438503
+2025-10-01 21:46:31.746 [ForkJoinPool.commonPool-worker-4] INFO  c.j.scraper.HackerNewsScraper - Processing 233 comments from HackerNews
+2025-10-01 21:46:31.752 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Hi HN! CrossnoKaye is a Series C startup tackling climate change by transforming the heavy industria
+2025-10-01 21:46:31.753 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Pomelo Care | San Francisco, NYC, Remote - USA ONLY with Work Authorization | Software Engineer (mid
+2025-10-01 21:46:31.754 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Location: Almaty, Kazakhstan
+2025-10-01 21:46:31.755 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: QUOBYTE | Santa Clara, CA and Berlin, Germany | Full-time | ONSITE | https://www.quobyte.com/ At Quo
+2025-10-01 21:46:31.755 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Freed | Software Engineers (Fullstack / AI), EM / Tech Lead Manager, Product Design, Product Manager
+2025-10-01 21:46:31.756 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Stellar Science | Hybrid (USA) Albuquerque NM, Washington DC (Tysons VA), Dayton OH | Full time, int
+2025-10-01 21:46:31.756 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: ROCKSTAR GAMES | NYC-San Diego-New England| FULL-TIME | FULLY ONSITE | SENIOR .NET SOFTWARE ENGINEER
+2025-10-01 21:46:31.757 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Avy | Staff Engineer / Startup Polyglot Engineer | San Francisco | Onsite (Hybrid) | Full-Time | htt
+2025-10-01 21:46:31.757 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Radar Labs | Software Engineers (SRE, data platform, backend, full-stack, mobile) | Remote (US), NYC
+2025-10-01 21:46:31.759 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: InnoVint | Wine Production Software | Remote (US-based) | FT | Senior BE Developer (Django/Python) W
+2025-10-01 21:46:31.759 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Channable | Utrecht, Netherlands | ONSITE Channable is a fast-growing B2B SaaS platform that offers 
+2025-10-01 21:46:31.760 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: CredCore | Engineering | Full-time | Remote/Onsite | www.credcore.com CredCore helps companies analy
+2025-10-01 21:46:31.761 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: ArcPrime | http://arcprime.com/ | Remote | Full Time | Full Stack Developer ArcPrime just closed a s
+2025-10-01 21:46:31.762 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Oryo.io | Founding Engineers / Staff Software Engineers | Cybersecurity | Remote (US, ideally near S
+2025-10-01 21:46:31.763 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Konvu | https://konvu.com/ | Software Engineer | FULLTIME | ONSITE | Paris, France Konvu delivers AI
+2025-10-01 21:46:31.763 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Devyce (YC S22) | UK (remote/onsite/hybrid) | Senior Frontend/Fullstack/Backend Developers | Full Ti
+2025-10-01 21:46:31.764 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Nango | Staff backend engineer | Remote | Full time | $120-200k + equity Nango (YC W23) is an open s
+2025-10-01 21:46:31.765 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Chronograph (chronograph.pe) | Multiple roles | Full-Time | Remote (US) | $160-205K USD + equity Chr
+2025-10-01 21:46:31.765 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: MONUMENTAL | https://www.monumental.co/ | Amsterdam, The Netherlands | Full Time | Onsite We make ro
+2025-10-01 21:46:31.765 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Multiply | Python + SQL Software Engineer | On-site | Mauritius We build repricing software that kee
+2025-10-01 21:46:31.766 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: LiveKit | Remote | Livekit.io | VoiceAI | webRTC | Real-time communications LiveKit is defining a ne
+2025-10-01 21:46:31.766 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: JWP Connatix | AI Software Engineer | REMOTE (EU) | Full-Time JWP Connatix is the most comprehensive
+2025-10-01 21:46:31.767 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Checkr | Software Engineer (multiple) | Hybrid | San Francisco, CA & Denver, CO| Full-time About Che
+2025-10-01 21:46:31.767 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: yeet | Chicago, IL / Remote | Full-Time Building a dynamic runtime on top of the Linux BPF sub-syste
+2025-10-01 21:46:31.768 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Frequenz Energy-as-a-Service GmbH | Full-Time | Berlin/Hybrid-Possible, Germany We are a technology 
+2025-10-01 21:46:31.768 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Scholarly | Software Engineer | Seattle, On-Site | Full-Time | $130k - $200k + equity + health benef
+2025-10-01 21:46:31.769 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Duranta | https://www.getduranta.com/ | Seattle, WA | ONSITE | Full-time Roles: Computer Vision Engi
+2025-10-01 21:46:31.770 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Goody | Remote | $200–250K + equity and benefits | Full-time Goody is hiring a full-stack Staff Soft
+2025-10-01 21:46:31.770 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Nova Credit | Remote (US, Canada) We're building a unified platform for credit and financial data to
+2025-10-01 21:46:31.770 [ForkJoinPool.commonPool-worker-4] DEBUG c.j.scraper.HackerNewsScraper - Added HN job: Smart 11 | React Native Software Engineer | Netherlands (Breda) / Remote | Part or Full time | smart
+2025-10-01 21:46:31.770 [ForkJoinPool.commonPool-worker-4] INFO  c.j.scraper.HackerNewsScraper - Scraped 30 relevant jobs from HackerNews
+2025-10-01 21:46:31.770 [ForkJoinPool.commonPool-worker-4] INFO  com.jobsearch.scraper.WebScraper - ✓ HackerNews returned 30 jobs in 793ms
+2025-10-01 21:46:31.830 [ForkJoinPool.commonPool-worker-2] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-10-01 21:46:31.873 [ForkJoinPool.commonPool-worker-2] INFO  i.g.bonigarcia.wdm.online.Downloader - Downloading https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/140.0.7339.207/win64/chromedriver-win64.zip
+2025-10-01 21:46:32.360 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.api.JobBoardAPIClient - Retrieved 25 jobs from Adzuna API
+2025-10-01 21:46:32.360 [ForkJoinPool.commonPool-worker-1] INFO  com.jobsearch.scraper.WebScraper - ✓ Adzuna API returned 25 jobs in 1383ms
+2025-10-01 21:46:34.740 [ForkJoinPool.commonPool-worker-2] INFO  i.g.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+2025-10-01 21:46:34.851 [ForkJoinPool.commonPool-worker-2] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\david\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-10-01 21:46:36.626 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - Selenium WebDriver initialized successfully
+2025-10-01 21:46:36.626 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - → Starting search from: LinkedIn
+2025-10-01 21:46:36.627 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - Scraping LinkedIn Jobs: https://www.linkedin.com/jobs/search/?keywords=junior%20software%20developer&location=&f_TPR=r86400
+2025-10-01 21:46:38.408 [ForkJoinPool.commonPool-worker-2] WARN  c.jobsearch.scraper.SeleniumScraper - CAPTCHA detected on LinkedIn, skipping
+2025-10-01 21:46:38.408 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ✓ LinkedIn returned 0 jobs in 1781ms
+2025-10-01 21:46:38.409 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - → Starting search from: Dice
+2025-10-01 21:46:38.410 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - Scraping Dice.com: https://www.dice.com/jobs?q=junior%20software%20developer&location=&latitude=&longitude=&countryCode=US&locationPrecision=Country&radius=30&radiusUnit=mi&page=1&pageSize=20&filters.postedDate=ONE&language=en
+2025-10-01 21:46:39.096 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.api.JobBoardAPIClient - Retrieved 0 jobs from Remotive API
+2025-10-01 21:46:39.096 [ForkJoinPool.commonPool-worker-3] INFO  com.jobsearch.scraper.WebScraper - ✓ Remotive API returned 0 jobs in 8119ms
+2025-10-01 21:47:03.123 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - Found 0 job cards on Dice
+2025-10-01 21:47:03.123 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - Successfully scraped 0 jobs from Dice
+2025-10-01 21:47:03.123 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ✓ Dice returned 0 jobs in 24713ms
+2025-10-01 21:47:03.229 [ForkJoinPool.commonPool-worker-2] INFO  c.jobsearch.scraper.SeleniumScraper - WebDriver closed successfully
+2025-10-01 21:47:03.230 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ────────────────────────────────────────────────────────────
+2025-10-01 21:47:03.230 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - TOTAL JOBS COLLECTED: 55
+2025-10-01 21:47:03.230 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ────────────────────────────────────────────────────────────
+2025-10-01 21:47:03.231 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper -   • Adzuna: 25 jobs
+2025-10-01 21:47:03.231 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper -   • HackerNews: 30 jobs
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ────────────────────────────────────────────────────────────
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer (99)' for search term: 'junior software developer'
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer (99)'
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer (99)' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Test Automation Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 3 of 3 terms matched
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Test Automation Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.232 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Test Automation Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 3 of 3 terms matched
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Test Automation Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Test Automation Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 3 of 3 terms matched
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Test Automation Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer with Security Clearance'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer with Security Clearance'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.233 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer with Security Clearance'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer with Security Clearance'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer with Security Clearance'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer with Security Clearance'
+2025-10-01 21:47:03.234 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer - Vandenberg SFB, CA' for search term: 'junior software developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer - Vandenberg SFB, CA'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer - Vandenberg SFB, CA' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.235 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer - Vandenberg SFB, CA with Security Clearance' for search term: 'junior software developer'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer - Vandenberg SFB, CA with Security Clearance'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer - Vandenberg SFB, CA with Security Clearance' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.236 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Junior Software Developer' for search term: 'junior software developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Exact match found in title for 'Junior Software Developer'
+2025-10-01 21:47:03.237 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Junior Software Developer' scored: Relevance=10, Reputation=9
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Hi HN! CrossnoKaye is a Series C startup tackling climate change by transforming the heavy industria' for search term: 'junior software developer'
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Hi HN! CrossnoKaye is a Series C startup tackling climate change by transforming the heavy industria' scored: Relevance=4, Reputation=8
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Pomelo Care | San Francisco, NYC, Remote - USA ONLY with Work Authorization | Software Engineer (mid' for search term: 'junior software developer'
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Pomelo Care | San Francisco, NYC, Remote - USA ONLY with Work Authorization | Software Engineer (mid' scored: Relevance=6, Reputation=8
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Location: Almaty, Kazakhstan' for search term: 'junior software developer'
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Location: Almaty, Kazakhstan' scored: Relevance=6, Reputation=8
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'QUOBYTE | Santa Clara, CA and Berlin, Germany | Full-time | ONSITE | https://www.quobyte.com/ At Quo' for search term: 'junior software developer'
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'QUOBYTE | Santa Clara, CA and Berlin, Germany | Full-time | ONSITE | https://www.quobyte.com/ At Quo' scored: Relevance=4, Reputation=8
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Freed | Software Engineers (Fullstack / AI), EM / Tech Lead Manager, Product Design, Product Manager' for search term: 'junior software developer'
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Freed | Software Engineers (Fullstack / AI), EM / Tech Lead Manager, Product Design, Product Manager' scored: Relevance=7, Reputation=8
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Stellar Science | Hybrid (USA) Albuquerque NM, Washington DC (Tysons VA), Dayton OH | Full time, int' for search term: 'junior software developer'
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.238 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Stellar Science | Hybrid (USA) Albuquerque NM, Washington DC (Tysons VA), Dayton OH | Full time, int' scored: Relevance=5, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'ROCKSTAR GAMES | NYC-San Diego-New England| FULL-TIME | FULLY ONSITE | SENIOR .NET SOFTWARE ENGINEER' for search term: 'junior software developer'
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'ROCKSTAR GAMES | NYC-San Diego-New England| FULL-TIME | FULLY ONSITE | SENIOR .NET SOFTWARE ENGINEER' scored: Relevance=7, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Avy | Staff Engineer / Startup Polyglot Engineer | San Francisco | Onsite (Hybrid) | Full-Time | htt' for search term: 'junior software developer'
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 0 of 3 terms matched
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Avy | Staff Engineer / Startup Polyglot Engineer | San Francisco | Onsite (Hybrid) | Full-Time | htt' scored: Relevance=1, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Radar Labs | Software Engineers (SRE, data platform, backend, full-stack, mobile) | Remote (US), NYC' for search term: 'junior software developer'
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Radar Labs | Software Engineers (SRE, data platform, backend, full-stack, mobile) | Remote (US), NYC' scored: Relevance=7, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'InnoVint | Wine Production Software | Remote (US-based) | FT | Senior BE Developer (Django/Python) W' for search term: 'junior software developer'
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'InnoVint | Wine Production Software | Remote (US-based) | FT | Senior BE Developer (Django/Python) W' scored: Relevance=10, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Channable | Utrecht, Netherlands | ONSITE Channable is a fast-growing B2B SaaS platform that offers ' for search term: 'junior software developer'
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Channable | Utrecht, Netherlands | ONSITE Channable is a fast-growing B2B SaaS platform that offers ' scored: Relevance=4, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'CredCore | Engineering | Full-time | Remote/Onsite | www.credcore.com CredCore helps companies analy' for search term: 'junior software developer'
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'CredCore | Engineering | Full-time | Remote/Onsite | www.credcore.com CredCore helps companies analy' scored: Relevance=4, Reputation=8
+2025-10-01 21:47:03.239 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'ArcPrime | http://arcprime.com/ | Remote | Full Time | Full Stack Developer ArcPrime just closed a s' for search term: 'junior software developer'
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'ArcPrime | http://arcprime.com/ | Remote | Full Time | Full Stack Developer ArcPrime just closed a s' scored: Relevance=8, Reputation=8
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Oryo.io | Founding Engineers / Staff Software Engineers | Cybersecurity | Remote (US, ideally near S' for search term: 'junior software developer'
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Oryo.io | Founding Engineers / Staff Software Engineers | Cybersecurity | Remote (US, ideally near S' scored: Relevance=6, Reputation=8
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Konvu | https://konvu.com/ | Software Engineer | FULLTIME | ONSITE | Paris, France Konvu delivers AI' for search term: 'junior software developer'
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Konvu | https://konvu.com/ | Software Engineer | FULLTIME | ONSITE | Paris, France Konvu delivers AI' scored: Relevance=6, Reputation=8
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Devyce (YC S22) | UK (remote/onsite/hybrid) | Senior Frontend/Fullstack/Backend Developers | Full Ti' for search term: 'junior software developer'
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Devyce (YC S22) | UK (remote/onsite/hybrid) | Senior Frontend/Fullstack/Backend Developers | Full Ti' scored: Relevance=8, Reputation=8
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Nango | Staff backend engineer | Remote | Full time | $120-200k + equity Nango (YC W23) is an open s' for search term: 'junior software developer'
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:47:03.240 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Nango | Staff backend engineer | Remote | Full time | $120-200k + equity Nango (YC W23) is an open s' scored: Relevance=10, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Chronograph (chronograph.pe) | Multiple roles | Full-Time | Remote (US) | $160-205K USD + equity Chr' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 0 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Chronograph (chronograph.pe) | Multiple roles | Full-Time | Remote (US) | $160-205K USD + equity Chr' scored: Relevance=2, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'MONUMENTAL | https://www.monumental.co/ | Amsterdam, The Netherlands | Full Time | Onsite We make ro' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 0 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'MONUMENTAL | https://www.monumental.co/ | Amsterdam, The Netherlands | Full Time | Onsite We make ro' scored: Relevance=2, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Multiply | Python + SQL Software Engineer | On-site | Mauritius We build repricing software that kee' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Multiply | Python + SQL Software Engineer | On-site | Mauritius We build repricing software that kee' scored: Relevance=6, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'LiveKit | Remote | Livekit.io | VoiceAI | webRTC | Real-time communications LiveKit is defining a ne' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'LiveKit | Remote | Livekit.io | VoiceAI | webRTC | Real-time communications LiveKit is defining a ne' scored: Relevance=4, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'JWP Connatix | AI Software Engineer | REMOTE (EU) | Full-Time JWP Connatix is the most comprehensive' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'JWP Connatix | AI Software Engineer | REMOTE (EU) | Full-Time JWP Connatix is the most comprehensive' scored: Relevance=7, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Checkr | Software Engineer (multiple) | Hybrid | San Francisco, CA & Denver, CO| Full-time About Che' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Checkr | Software Engineer (multiple) | Hybrid | San Francisco, CA & Denver, CO| Full-time About Che' scored: Relevance=7, Reputation=8
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'yeet | Chicago, IL / Remote | Full-Time Building a dynamic runtime on top of the Linux BPF sub-syste' for search term: 'junior software developer'
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.241 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'yeet | Chicago, IL / Remote | Full-Time Building a dynamic runtime on top of the Linux BPF sub-syste' scored: Relevance=7, Reputation=8
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Frequenz Energy-as-a-Service GmbH | Full-Time | Berlin/Hybrid-Possible, Germany We are a technology ' for search term: 'junior software developer'
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Frequenz Energy-as-a-Service GmbH | Full-Time | Berlin/Hybrid-Possible, Germany We are a technology ' scored: Relevance=10, Reputation=8
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Scholarly | Software Engineer | Seattle, On-Site | Full-Time | $130k - $200k + equity + health benef' for search term: 'junior software developer'
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Scholarly | Software Engineer | Seattle, On-Site | Full-Time | $130k - $200k + equity + health benef' scored: Relevance=6, Reputation=8
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Duranta | https://www.getduranta.com/ | Seattle, WA | ONSITE | Full-time Roles: Computer Vision Engi' for search term: 'junior software developer'
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Duranta | https://www.getduranta.com/ | Seattle, WA | ONSITE | Full-time Roles: Computer Vision Engi' scored: Relevance=4, Reputation=8
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Goody | Remote | $200–250K + equity and benefits | Full-time Goody is hiring a full-stack Staff Soft' for search term: 'junior software developer'
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.242 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Goody | Remote | $200–250K + equity and benefits | Full-time Goody is hiring a full-stack Staff Soft' scored: Relevance=5, Reputation=8
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Nova Credit | Remote (US, Canada) We're building a unified platform for credit and financial data to' for search term: 'junior software developer'
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 1 of 3 terms matched
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Nova Credit | Remote (US, Canada) We're building a unified platform for credit and financial data to' scored: Relevance=5, Reputation=8
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Scoring job: 'Smart 11 | React Native Software Engineer | Netherlands (Breda) / Remote | Part or Full time | smart' for search term: 'junior software developer'
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Partial match: 2 of 3 terms matched
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] DEBUG com.jobsearch.analyzer.JobAnalyzer - Job 'Smart 11 | React Native Software Engineer | Netherlands (Breda) / Remote | Part or Full time | smart' scored: Relevance=10, Reputation=8
+2025-10-01 21:47:03.243 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ✓ Jobs scored and sorted
+2025-10-01 21:47:03.244 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ✓ Returning 55 total jobs
+2025-10-01 21:47:03.244 [ForkJoinPool.commonPool-worker-2] INFO  com.jobsearch.scraper.WebScraper - ════════════════════════════════════════════════════════════
+

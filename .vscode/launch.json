@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Job Search Assistant",
+            "request": "launch",
+            "mainClass": "com.jobsearch.Main",
+            "projectName": "JobSearchAssistant",
+            "classPaths": [
+                "${workspaceFolder}/target/classes",
+                "${workspaceFolder}/target/dependency/*"
+            ]
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 package com.jobsearch.scraper;
 
 import com.jobsearch.model.JobPosting;
+import com.jobsearch.model.SearchFilters;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,7 +17,7 @@ import java.util.List;
 public class HackerNewsScraper {
     private static final Logger logger = LoggerFactory.getLogger(HackerNewsScraper.class);
     
-    public List<JobPosting> scrapeWhoIsHiring(String searchTerm) {
+    public List<JobPosting> scrapeWhoIsHiring(SearchFilters filters) {
         List<JobPosting> jobs = new ArrayList<>();
         
         try {
@@ -25,7 +26,7 @@ public class HackerNewsScraper {
             
             Document doc = Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
-                .timeout(10000)
+                .timeout(15000)
                 .get();
             
             Elements submissions = doc.select("tr.athing");
@@ -47,13 +48,16 @@ public class HackerNewsScraper {
             
             logger.info("Found latest hiring thread: {}", latestJobThread);
             
+            // Add delay before fetching thread
+            Thread.sleep(1000);
+            
             Document jobsDoc = Jsoup.connect(latestJobThread)
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
-                .timeout(15000)
+                .timeout(20000)
                 .get();
             
             Elements comments = jobsDoc.select("tr.comtr");
-            String searchLower = searchTerm.toLowerCase();
+            String searchLower = filters.getSearchTerms().toLowerCase();
             
             logger.info("Processing {} comments from HackerNews", comments.size());
             
@@ -63,13 +67,13 @@ public class HackerNewsScraper {
                     
                     if (text.contains(searchLower) || containsAnyWord(text, searchLower.split(" "))) {
                         JobPosting job = parseHNComment(comment, latestJobThread);
-                        if (job != null && job.getTitle() != null) {
+                        if (job != null && matchesFilters(job, filters)) {
                             jobs.add(job);
                             logger.debug("Added HN job: {}", job.getTitle());
                         }
                     }
                     
-                    if (jobs.size() >= 30) break;
+                    if (jobs.size() >= 40) break;
                 } catch (Exception e) {
                     logger.debug("Error parsing HN comment: {}", e.getMessage());
                 }
@@ -79,6 +83,8 @@ public class HackerNewsScraper {
             
         } catch (IOException e) {
             logger.error("Error scraping HackerNews: {}", e.getMessage());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
         
         return jobs;
@@ -94,7 +100,6 @@ public class HackerNewsScraper {
             String text = commentText.text();
             if (text.isEmpty()) return null;
             
-            // Extract company name - usually the first part before | or -
             String[] parts = text.split("\\|");
             if (parts.length > 0 && parts[0].length() > 0) {
                 String companyPart = parts[0].trim();
@@ -103,7 +108,6 @@ public class HackerNewsScraper {
                 job.setCompany("See posting");
             }
             
-            // Create title from first line
             String[] lines = text.split("\\n");
             if (lines.length > 0 && lines[0].length() > 0) {
                 String title = lines[0].trim();
@@ -112,16 +116,17 @@ public class HackerNewsScraper {
                 job.setTitle("Software Position at " + job.getCompany());
             }
             
-            // Check for remote
-            if (text.toLowerCase().contains("remote")) {
+            String textLower = text.toLowerCase();
+            if (textLower.contains("remote")) {
                 job.setLocation("Remote");
-            } else if (text.toLowerCase().contains("on-site") || text.toLowerCase().contains("onsite")) {
+            } else if (textLower.contains("on-site") || textLower.contains("onsite")) {
                 job.setLocation("On-site");
+            } else if (textLower.contains("hybrid")) {
+                job.setLocation("Hybrid");
             } else {
                 job.setLocation("See posting");
             }
             
-            // Get comment URL
             Element ageElement = comment.selectFirst("span.age a");
             if (ageElement != null) {
                 job.setUrl("https://news.ycombinator.com/" + ageElement.attr("href"));
@@ -129,7 +134,6 @@ public class HackerNewsScraper {
                 job.setUrl(threadUrl);
             }
             
-            // Set description
             if (text.length() > 0) {
                 job.setDescription(text.substring(0, Math.min(500, text.length())));
             }
@@ -144,6 +148,35 @@ public class HackerNewsScraper {
             logger.debug("Error parsing HN comment: {}", e.getMessage());
             return null;
         }
+    }
+    
+    private boolean matchesFilters(JobPosting job, SearchFilters filters) {
+        // Work model filter
+        if (filters.getWorkModel() != SearchFilters.WorkModel.NO_PREFERENCE) {
+            String location = job.getLocation().toLowerCase();
+            String desc = job.getDescription() != null ? job.getDescription().toLowerCase() : "";
+            String combined = location + " " + desc;
+            
+            switch (filters.getWorkModel()) {
+                case REMOTE:
+                    if (!combined.contains("remote")) {
+                        return false;
+                    }
+                    break;
+                case HYBRID:
+                    if (!combined.contains("hybrid")) {
+                        return false;
+                    }
+                    break;
+                case IN_PERSON:
+                    if (combined.contains("remote") || combined.contains("hybrid")) {
+                        return false;
+                    }
+                    break;
+            }
+        }
+        
+        return true;
     }
     
     private boolean containsAnyWord(String text, String[] words) {

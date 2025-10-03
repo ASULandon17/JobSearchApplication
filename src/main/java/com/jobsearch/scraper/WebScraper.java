@@ -1,6 +1,7 @@
 package com.jobsearch.scraper;
 
 import com.jobsearch.model.JobPosting;
+import com.jobsearch.model.SearchFilters;
 import com.jobsearch.analyzer.JobAnalyzer;
 import com.jobsearch.api.JobBoardAPIClient;
 import org.slf4j.Logger;
@@ -16,32 +17,68 @@ public class WebScraper {
     private final JobAnalyzer analyzer;
     private final JobBoardAPIClient apiClient;
     private final HackerNewsScraper hnScraper;
+    private final WeWorkRemotelyScraper weWorkScraper;
+    private final PowerToFlyScraper powerToFlyScraper;
+    private final CrunchboardScraper crunchboardScraper;
     private SeleniumScraper seleniumScraper;
+    private final IndeedScraper indeedScraper;
+
+public WebScraper() {
+    this.analyzer = new JobAnalyzer();
+    this.apiClient = new JobBoardAPIClient();
+    this.hnScraper = new HackerNewsScraper();
+    this.weWorkScraper = new WeWorkRemotelyScraper();
+    this.powerToFlyScraper = new PowerToFlyScraper();
+    this.crunchboardScraper = new CrunchboardScraper();
+    this.indeedScraper = new IndeedScraper(); // Add this
+    logger.info("WebScraper initialized with all job boards");
+}
     
-    public WebScraper() {
-        this.analyzer = new JobAnalyzer();
-        this.apiClient = new JobBoardAPIClient();
-        this.hnScraper = new HackerNewsScraper();
-        logger.info("WebScraper initialized - Production mode (no demo data)");
-    }
-    
-    public List<JobPosting> searchJobs(String searchTerm) {
+    public List<JobPosting> searchJobs(SearchFilters filters) {
         logger.info("╔════════════════════════════════════════════════════════════╗");
-        logger.info("║  STARTING JOB SEARCH: '{}'", searchTerm);
+        logger.info("║  STARTING JOB SEARCH");
+        logger.info("║  Search Terms: '{}'", filters.getSearchTerms());
+        logger.info("║  Work Model: {}", filters.getWorkModel());
+        logger.info("║  Location: {}", filters.hasLocationFilter() ? filters.getLocationString() : "Any");
+        logger.info("║  Experience: {}", filters.getExperienceLevel());
         logger.info("╚════════════════════════════════════════════════════════════╝");
         
         List<CompletableFuture<List<JobPosting>>> futures = new ArrayList<>();
         
-        // API-based sources (most reliable, no bot detection)
+        // API-based sources (most reliable)
         futures.add(CompletableFuture.supplyAsync(() -> 
-            safeSearch("Adzuna API", () -> apiClient.searchAdzuna(searchTerm))));
+            safeSearch("Adzuna API", () -> apiClient.searchAdzuna(filters))));
         
-        futures.add(CompletableFuture.supplyAsync(() -> 
-            safeSearch("Remotive API", () -> apiClient.searchRemotiveAPI(searchTerm))));
+        futures.add(CompletableFuture.supplyAsync(() -> {
+            delay(1000); // Respectful delay
+            return safeSearch("Remotive API", () -> apiClient.searchRemotiveAPI(filters));
+        }));
         
-        // Static HTML sources (works without JavaScript)
-        futures.add(CompletableFuture.supplyAsync(() -> 
-            safeSearch("HackerNews", () -> hnScraper.scrapeWhoIsHiring(searchTerm))));
+        // Static HTML sources
+        futures.add(CompletableFuture.supplyAsync(() -> {
+            delay(1500);
+            return safeSearch("HackerNews", () -> hnScraper.scrapeWhoIsHiring(filters));
+        }));
+        
+        futures.add(CompletableFuture.supplyAsync(() -> {
+            delay(2000);
+            return safeSearch("WeWorkRemotely", () -> weWorkScraper.scrape(filters));
+        }));
+        
+        futures.add(CompletableFuture.supplyAsync(() -> {
+            delay(2500);
+            return safeSearch("PowerToFly", () -> powerToFlyScraper.scrape(filters));
+        }));
+        
+        futures.add(CompletableFuture.supplyAsync(() -> {
+            delay(3000);
+            return safeSearch("Crunchboard", () -> crunchboardScraper.scrape(filters));
+        }));
+
+        futures.add(CompletableFuture.supplyAsync(() -> {
+    delay(3500);
+    return safeSearch("Indeed", () -> indeedScraper.scrape(filters));
+}));
         
         // Selenium-based sources (if available)
         futures.add(CompletableFuture.supplyAsync(() -> {
@@ -50,14 +87,16 @@ public class WebScraper {
                 seleniumScraper = new SeleniumScraper();
                 
                 seleniumJobs.addAll(safeSearch("LinkedIn", () -> 
-                    seleniumScraper.scrapeLinkedInJobs(searchTerm)));
+                    seleniumScraper.scrapeLinkedInJobs(filters)));
+                
+                delay(3000); // Delay between Selenium scrapes
                 
                 seleniumJobs.addAll(safeSearch("Dice", () -> 
-                    seleniumScraper.scrapeDice(searchTerm)));
+                    seleniumScraper.scrapeDice(filters)));
                 
                 return seleniumJobs;
             } catch (Exception e) {
-                logger.warn("Selenium scraping encountered an error: {}", e.getMessage());
+                logger.warn("Selenium scraping error: {}", e.getMessage());
                 return seleniumJobs;
             } finally {
                 if (seleniumScraper != null) {
@@ -71,7 +110,7 @@ public class WebScraper {
             futures.toArray(new CompletableFuture[0]));
         
         try {
-            allFutures.get(60, TimeUnit.SECONDS);
+            allFutures.get(90, TimeUnit.SECONDS);
         } catch (Exception e) {
             logger.error("Timeout or error waiting for scrapers: {}", e.getMessage());
         }
@@ -98,7 +137,7 @@ public class WebScraper {
         logger.info("────────────────────────────────────────────────────────────");
         
         // Score and sort
-        allJobs.forEach(job -> analyzer.scoreJob(job, searchTerm));
+        allJobs.forEach(job -> analyzer.scoreJob(job, filters.getSearchTerms()));
         allJobs.sort((a, b) -> {
             int scoreA = a.getRelevanceScore() + a.getReputabilityScore();
             int scoreB = b.getRelevanceScore() + b.getReputabilityScore();
@@ -125,8 +164,15 @@ public class WebScraper {
             return results;
         } catch (Exception e) {
             logger.error("✗ Error searching {}: {}", source, e.getMessage());
-            e.printStackTrace();
             return new ArrayList<>();
+        }
+    }
+    
+    private void delay(long milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
     

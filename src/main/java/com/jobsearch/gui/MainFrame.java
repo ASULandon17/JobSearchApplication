@@ -1,14 +1,15 @@
 package com.jobsearch.gui;
 
 import com.jobsearch.model.JobPosting;
+import com.jobsearch.model.SearchFilters;
+import com.jobsearch.model.SearchFilters.WorkModel;
+import com.jobsearch.model.SearchFilters.ExperienceLevel;
 import com.jobsearch.scraper.WebScraper;
-import com.jobsearch.analyzer.JobAnalyzer;
-import com.jobsearch.utils.PDFReader;
 import com.jobsearch.utils.ExcelExporter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableRowSorter;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,6 +30,15 @@ public class MainFrame extends JFrame {
     private JProgressBar progressBar;
     private JLabel statusLabel;
     private JLabel resumeLabel;
+    
+    // New filter components
+    private ButtonGroup workModelGroup;
+    private JRadioButton remoteRadio, hybridRadio, inPersonRadio, noWorkPrefRadio;
+    private JTextField cityField;
+    private JTextField stateField;
+    private ButtonGroup experienceLevelGroup;
+    private JRadioButton juniorRadio, midLevelRadio, seniorRadio, noExpPrefRadio;
+    
     private File selectedResume;
     private List<JobPosting> currentJobs;
     
@@ -37,7 +47,7 @@ public class MainFrame extends JFrame {
     }
     
     private void initializeUI() {
-        setTitle("Job Search Assistant");
+        setTitle("Job Search Assistant - Enhanced");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         
@@ -50,7 +60,7 @@ public class MainFrame extends JFrame {
         JPanel bottomPanel = createBottomPanel();
         add(bottomPanel, BorderLayout.SOUTH);
         
-        setSize(1200, 700);
+        setSize(1400, 800);
         setLocationRelativeTo(null);
     }
     
@@ -62,44 +72,161 @@ public class MainFrame extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
         
+        int row = 0;
+        
+        // Resume selection
         gbc.gridx = 0;
-        gbc.gridy = 0;
+        gbc.gridy = row;
+        gbc.gridwidth = 1;
         panel.add(new JLabel("Resume:"), gbc);
         
         gbc.gridx = 1;
+        gbc.gridwidth = 2;
         gbc.weightx = 1.0;
         resumeLabel = new JLabel("No file selected");
         resumeLabel.setForeground(Color.GRAY);
         panel.add(resumeLabel, gbc);
         
-        gbc.gridx = 2;
+        gbc.gridx = 3;
+        gbc.gridwidth = 1;
         gbc.weightx = 0;
         selectResumeButton = new JButton("Select Resume");
         selectResumeButton.addActionListener(e -> selectResume());
         panel.add(selectResumeButton, gbc);
         
+        row++;
+        
+        // Search terms
         gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridy = row;
         panel.add(new JLabel("Search Terms:"), gbc);
         
         gbc.gridx = 1;
+        gbc.gridwidth = 3;
         gbc.weightx = 1.0;
         searchField = new JTextField();
-        searchField.setToolTipText("Enter job search terms (e.g., 'junior software engineer')");
+        searchField.setToolTipText("Enter job search terms (e.g., 'software engineer', 'data analyst')");
         panel.add(searchField, gbc);
         
-        gbc.gridx = 2;
+        row++;
+        
+        // Work Model
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        gbc.gridwidth = 1;
         gbc.weightx = 0;
-        searchButton = new JButton("Search Jobs");
+        panel.add(new JLabel("Work Model:"), gbc);
+        
+        JPanel workModelPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        workModelGroup = new ButtonGroup();
+        
+        noWorkPrefRadio = new JRadioButton("No Preference");
+        noWorkPrefRadio.setSelected(true);
+        remoteRadio = new JRadioButton("Remote");
+        hybridRadio = new JRadioButton("Hybrid");
+        inPersonRadio = new JRadioButton("In-Person");
+        
+        workModelGroup.add(noWorkPrefRadio);
+        workModelGroup.add(remoteRadio);
+        workModelGroup.add(hybridRadio);
+        workModelGroup.add(inPersonRadio);
+        
+        workModelPanel.add(noWorkPrefRadio);
+        workModelPanel.add(remoteRadio);
+        workModelPanel.add(hybridRadio);
+        workModelPanel.add(inPersonRadio);
+        
+        gbc.gridx = 1;
+        gbc.gridwidth = 3;
+        gbc.weightx = 1.0;
+        panel.add(workModelPanel, gbc);
+        
+        row++;
+        
+        // Location
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        gbc.gridwidth = 1;
+        gbc.weightx = 0;
+        panel.add(new JLabel("Location (Optional):"), gbc);
+        
+        JPanel locationPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        locationPanel.add(new JLabel("City:"));
+        cityField = new JTextField(15);
+        cityField.setToolTipText("Enter city name");
+        locationPanel.add(cityField);
+        
+        locationPanel.add(Box.createHorizontalStrut(10));
+        locationPanel.add(new JLabel("State:"));
+        stateField = new JTextField(5);
+        stateField.setToolTipText("Enter state code (e.g., CA, NY)");
+        locationPanel.add(stateField);
+        
+        locationPanel.add(Box.createHorizontalStrut(5));
+        JLabel radiusLabel = new JLabel("(50 mile radius)");
+        radiusLabel.setForeground(Color.GRAY);
+        radiusLabel.setFont(radiusLabel.getFont().deriveFont(Font.ITALIC, 11f));
+        locationPanel.add(radiusLabel);
+        
+        gbc.gridx = 1;
+        gbc.gridwidth = 3;
+        gbc.weightx = 1.0;
+        panel.add(locationPanel, gbc);
+        
+        row++;
+        
+        // Experience Level
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        gbc.gridwidth = 1;
+        gbc.weightx = 0;
+        panel.add(new JLabel("Experience Level:"), gbc);
+        
+        JPanel expPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        experienceLevelGroup = new ButtonGroup();
+        
+        noExpPrefRadio = new JRadioButton("No Preference");
+        noExpPrefRadio.setSelected(true);
+        juniorRadio = new JRadioButton("Junior");
+        midLevelRadio = new JRadioButton("Mid-Level");
+        seniorRadio = new JRadioButton("Senior");
+        
+        experienceLevelGroup.add(noExpPrefRadio);
+        experienceLevelGroup.add(juniorRadio);
+        experienceLevelGroup.add(midLevelRadio);
+        experienceLevelGroup.add(seniorRadio);
+        
+        expPanel.add(noExpPrefRadio);
+        expPanel.add(juniorRadio);
+        expPanel.add(midLevelRadio);
+        expPanel.add(seniorRadio);
+        
+        gbc.gridx = 1;
+        gbc.gridwidth = 3;
+        gbc.weightx = 1.0;
+        panel.add(expPanel, gbc);
+        
+        row++;
+        
+        // Action buttons
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        gbc.gridwidth = 4;
+        gbc.weightx = 1.0;
+        
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        searchButton = new JButton("🔍 Search Jobs");
         searchButton.addActionListener(e -> searchJobs());
         searchButton.setEnabled(false);
-        panel.add(searchButton, gbc);
+        searchButton.setFont(searchButton.getFont().deriveFont(Font.BOLD, 14f));
+        buttonPanel.add(searchButton);
         
-        gbc.gridx = 3;
-        exportButton = new JButton("Export to Excel");
+        exportButton = new JButton("📊 Export to Excel");
         exportButton.addActionListener(e -> exportToExcel());
         exportButton.setEnabled(false);
-        panel.add(exportButton, gbc);
+        buttonPanel.add(exportButton);
+        
+        panel.add(buttonPanel, gbc);
         
         return panel;
     }
@@ -140,9 +267,6 @@ public class MainFrame extends JFrame {
             }
         });
         
-        TableRowSorter<JobTableModel> sorter = new TableRowSorter<>(tableModel);
-        jobTable.setRowSorter(sorter);
-        
         return new JScrollPane(jobTable);
     }
     
@@ -150,7 +274,7 @@ public class MainFrame extends JFrame {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         
-        statusLabel = new JLabel("Ready");
+        statusLabel = new JLabel("Ready - Select a resume to begin");
         panel.add(statusLabel, BorderLayout.WEST);
         
         progressBar = new JProgressBar();
@@ -174,92 +298,123 @@ public class MainFrame extends JFrame {
         }
     }
     
-    private void searchJobs() {
-    String searchTerms = searchField.getText().trim();
-    if (searchTerms.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please enter search terms");
-        return;
+    private SearchFilters getFiltersFromUI() {
+        SearchFilters filters = new SearchFilters();
+        filters.setSearchTerms(searchField.getText().trim());
+        
+        // Work Model
+        if (remoteRadio.isSelected()) {
+            filters.setWorkModel(WorkModel.REMOTE);
+        } else if (hybridRadio.isSelected()) {
+            filters.setWorkModel(WorkModel.HYBRID);
+        } else if (inPersonRadio.isSelected()) {
+            filters.setWorkModel(WorkModel.IN_PERSON);
+        } else {
+            filters.setWorkModel(WorkModel.NO_PREFERENCE);
+        }
+        
+        // Location
+        String city = cityField.getText().trim();
+        String state = stateField.getText().trim();
+        if (!city.isEmpty()) filters.setCity(city);
+        if (!state.isEmpty()) filters.setState(state);
+        
+        // Experience Level
+        if (juniorRadio.isSelected()) {
+            filters.setExperienceLevel(ExperienceLevel.JUNIOR);
+        } else if (midLevelRadio.isSelected()) {
+            filters.setExperienceLevel(ExperienceLevel.MID_LEVEL);
+        } else if (seniorRadio.isSelected()) {
+            filters.setExperienceLevel(ExperienceLevel.SENIOR);
+        } else {
+            filters.setExperienceLevel(ExperienceLevel.NO_PREFERENCE);
+        }
+        
+        return filters;
     }
     
-    searchButton.setEnabled(false);
-    exportButton.setEnabled(false);
-    progressBar.setVisible(true);
-    progressBar.setIndeterminate(true);
-    statusLabel.setText("Initializing search...");
-    
-    // Create a timer to update status
-    Timer statusTimer = new Timer(500, e -> {
-        if (progressBar.isVisible()) {
-            String currentText = statusLabel.getText();
-            if (!currentText.endsWith("...")) {
-                statusLabel.setText(currentText + ".");
-            } else {
-                statusLabel.setText(currentText.substring(0, currentText.length() - 3));
-            }
+    private void searchJobs() {
+        SearchFilters filters = getFiltersFromUI();
+        
+        if (filters.getSearchTerms().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter search terms");
+            return;
         }
-    });
-    statusTimer.start();
-    
-    CompletableFuture.supplyAsync(() -> {
-        WebScraper scraper = new WebScraper();
-        return scraper.searchJobs(searchTerms);
-    }).thenAccept(jobs -> {
-        SwingUtilities.invokeLater(() -> {
-            statusTimer.stop();
-            tableModel.setJobs(jobs);
-            searchButton.setEnabled(true);
-            exportButton.setEnabled(!jobs.isEmpty());
-            progressBar.setVisible(false);
-            
-            if (jobs.isEmpty()) {
-                statusLabel.setText("No jobs found");
-                JOptionPane.showMessageDialog(this, 
-                    "No jobs were found. This might be due to:\n" +
-                    "• Network connectivity issues\n" +
-                    "• Job boards blocking automated access\n" +
-                    "• No matches for your search terms\n\n" +
-                    "Try different search terms or check the log file for details.",
-                    "No Results", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                statusLabel.setText(String.format("Found %d jobs", jobs.size()));
-                
-                // Show source breakdown
-                Map<String, Long> sourceCounts = jobs.stream()
-                    .collect(Collectors.groupingBy(
-                        JobPosting::getSource, 
-                        Collectors.counting()
-                    ));
-                
-                StringBuilder sourceInfo = new StringBuilder("Jobs by source:\n");
-                sourceCounts.forEach((source, count) -> 
-                    sourceInfo.append(String.format("• %s: %d\n", source, count)));
-                
-                JOptionPane.showMessageDialog(this, 
-                    sourceInfo.toString(), 
-                    "Search Complete", 
-                    JOptionPane.INFORMATION_MESSAGE);
+        
+        searchButton.setEnabled(false);
+        exportButton.setEnabled(false);
+        progressBar.setVisible(true);
+        progressBar.setIndeterminate(true);
+        statusLabel.setText("Searching job boards...");
+        
+        Timer statusTimer = new Timer(500, e -> {
+            if (progressBar.isVisible()) {
+                String currentText = statusLabel.getText();
+                if (!currentText.endsWith("...")) {
+                    statusLabel.setText(currentText + ".");
+                } else {
+                    statusLabel.setText("Searching job boards");
+                }
             }
         });
-    }).exceptionally(ex -> {
-        SwingUtilities.invokeLater(() -> {
-            statusTimer.stop();
-            searchButton.setEnabled(true);
-            progressBar.setVisible(false);
-            statusLabel.setText("Error occurred");
-            
-            String errorMessage = "An error occurred during the search:\n" + 
-                                ex.getMessage() + "\n\n" +
-                                "Check the log file (job-search-assistant.log) for details.";
-            
-            JOptionPane.showMessageDialog(this, 
-                errorMessage, 
-                "Search Error", 
-                JOptionPane.ERROR_MESSAGE);
+        statusTimer.start();
+        
+        CompletableFuture.supplyAsync(() -> {
+            WebScraper scraper = new WebScraper();
+            return scraper.searchJobs(filters);
+        }).thenAccept(jobs -> {
+            SwingUtilities.invokeLater(() -> {
+                statusTimer.stop();
+                currentJobs = jobs;
+                tableModel.setJobs(jobs);
+                searchButton.setEnabled(true);
+                exportButton.setEnabled(!jobs.isEmpty());
+                progressBar.setVisible(false);
+                
+                if (jobs.isEmpty()) {
+                    statusLabel.setText("No jobs found");
+                    JOptionPane.showMessageDialog(this, 
+                        "No jobs were found. This might be due to:\n" +
+                        "• Network connectivity issues\n" +
+                        "• Job boards blocking automated access\n" +
+                        "• No matches for your search criteria\n\n" +
+                        "Try different search terms or filters, or check the log file for details.",
+                        "No Results", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    statusLabel.setText(String.format("Found %d jobs from %d sources", 
+                        jobs.size(), 
+                        jobs.stream().map(JobPosting::getSource).distinct().count()));
+                    
+                    Map<String, Long> sourceCounts = jobs.stream()
+                        .collect(Collectors.groupingBy(JobPosting::getSource, Collectors.counting()));
+                    
+                    StringBuilder sourceInfo = new StringBuilder("Jobs by source:\n");
+                    sourceCounts.forEach((source, count) -> 
+                        sourceInfo.append(String.format("• %s: %d\n", source, count)));
+                    
+                    JOptionPane.showMessageDialog(this, 
+                        sourceInfo.toString(), 
+                        "Search Complete", 
+                        JOptionPane.INFORMATION_MESSAGE);
+                }
+            });
+        }).exceptionally(ex -> {
+            SwingUtilities.invokeLater(() -> {
+                statusTimer.stop();
+                searchButton.setEnabled(true);
+                progressBar.setVisible(false);
+                statusLabel.setText("Error occurred");
+                
+                JOptionPane.showMessageDialog(this, 
+                    "An error occurred during the search:\n" + ex.getMessage() +
+                    "\n\nCheck the log file for details.",
+                    "Search Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            });
+            ex.printStackTrace();
+            return null;
         });
-        ex.printStackTrace();
-        return null;
-    });
-}
+    }
     
     private void exportToExcel() {
         JFileChooser fileChooser = new JFileChooser();

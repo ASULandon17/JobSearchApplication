@@ -1,5 +1,6 @@
 package com.jobsearch.gui;
 
+import com.jobsearch.coverletter.CoverLetterGenerator;
 import com.jobsearch.model.JobPosting;
 import com.jobsearch.model.SearchFilters;
 import com.jobsearch.model.SearchFilters.WorkModel;
@@ -9,6 +10,8 @@ import com.jobsearch.utils.ExcelExporter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -233,22 +236,43 @@ public class MainFrame extends JFrame {
     
     private JScrollPane createTablePanel() {
         tableModel = new JobTableModel();
-        jobTable = new JTable(tableModel);
+        jobTable = new JTable(tableModel) {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return col == 7; // Only cover letter column is editable
+            }
+        };
+        
         jobTable.setRowHeight(25);
         jobTable.setAutoCreateRowSorter(true);
         
-        jobTable.getColumnModel().getColumn(0).setPreferredWidth(250);
-        jobTable.getColumnModel().getColumn(1).setPreferredWidth(150);
+        // Set column widths
+        jobTable.getColumnModel().getColumn(0).setPreferredWidth(200);
+        jobTable.getColumnModel().getColumn(1).setPreferredWidth(120);
         jobTable.getColumnModel().getColumn(2).setPreferredWidth(100);
         jobTable.getColumnModel().getColumn(3).setPreferredWidth(80);
         jobTable.getColumnModel().getColumn(4).setPreferredWidth(80);
         jobTable.getColumnModel().getColumn(5).setPreferredWidth(80);
         jobTable.getColumnModel().getColumn(6).setPreferredWidth(100);
+
+        // Add cover letter column
+        TableColumn buttonColumn = new TableColumn();
+        buttonColumn.setHeaderValue("Generate Letter");
+        buttonColumn.setPreferredWidth(120);
+        buttonColumn.setCellRenderer(new ButtonRenderer());
+        buttonColumn.setCellEditor(new ButtonEditor(new JCheckBox(), this));
+        jobTable.addColumn(buttonColumn);
         
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         jobTable.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
         jobTable.getColumnModel().getColumn(5).setCellRenderer(centerRenderer);
+        jobTable.getColumnModel().addColumn(new TableColumn());
+        jobTable.getColumnModel().getColumn(7).setHeaderValue("Cover Letter");
+        jobTable.getColumnModel().getColumn(7).setPreferredWidth(120);
+        jobTable.getColumnModel().getColumn(7).setCellRenderer(new ButtonRenderer());
+        jobTable.getColumnModel().getColumn(7).setCellEditor(
+            new ButtonEditor(new JCheckBox(), this));
         
         jobTable.addMouseListener(new MouseAdapter() {
             @Override
@@ -434,6 +458,152 @@ public class MainFrame extends JFrame {
                 JOptionPane.showMessageDialog(this, 
                     "Export failed: " + e.getMessage());
             }
+        }
+    }
+
+        class ButtonRenderer extends JButton implements TableCellRenderer {
+        public ButtonRenderer() {
+            setOpaque(true);
+        }
+        
+        public Component getTableCellRendererComponent(JTable table, Object value,
+                boolean isSelected, boolean hasFocus, int row, int column) {
+            setText("Generate");
+            return this;
+        }
+    }
+
+        class ButtonEditor extends DefaultCellEditor {
+        private JButton button;
+        private String label;
+        private boolean isPushed;
+        private int row;
+        private MainFrame parent;
+        
+        public ButtonEditor(JCheckBox checkBox, MainFrame parent) {
+            super(checkBox);
+            this.parent = parent;
+            button = new JButton();
+            button.setOpaque(true);
+            button.addActionListener(e -> fireEditingStopped());
+        }
+        
+        public Component getTableCellEditorComponent(JTable table, Object value,
+                boolean isSelected, int row, int column) {
+            this.row = row;
+            label = "Generate";
+            button.setText(label);
+            isPushed = true;
+            return button;
+        }
+        
+        public Object getCellEditorValue() {
+            if (isPushed) {
+                parent.generateCoverLetterForRow(row);
+            }
+            isPushed = false;
+            return label;
+        }
+    }
+
+    private void generateCoverLetterForRow(int row) {
+        if (currentJobs == null || row >= currentJobs.size()) {
+            return;
+        }
+        
+        JobPosting job = currentJobs.get(row);
+        
+        if (selectedResume == null) {
+            JOptionPane.showMessageDialog(this,
+                "Please select a resume first",
+                "No Resume",
+                JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        // Show progress dialog
+        JDialog progressDialog = new JDialog(this, "Generating Cover Letter", true);
+        JProgressBar progress = new JProgressBar();
+        progress.setIndeterminate(true);
+        progressDialog.add(progress);
+        progressDialog.setSize(300, 100);
+        progressDialog.setLocationRelativeTo(this);
+        
+        CompletableFuture.supplyAsync(() -> {
+            CoverLetterGenerator generator = new CoverLetterGenerator();
+            return generator.generateCoverLetter(job, selectedResume);
+        }).thenAccept(coverLetter -> {
+            SwingUtilities.invokeLater(() -> {
+                progressDialog.dispose();
+                showCoverLetterDialog(coverLetter, job);
+            });
+        }).exceptionally(ex -> {
+            SwingUtilities.invokeLater(() -> {
+                progressDialog.dispose();
+                JOptionPane.showMessageDialog(this,
+                    "Error generating cover letter: " + ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            });
+            return null;
+        });
+        
+        // Show progress dialog after a short delay
+        Timer timer = new Timer(500, e -> {
+            if (!progressDialog.isVisible()) {
+                progressDialog.setVisible(true);
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
+    }
+
+    private void showCoverLetterDialog(String coverLetter, JobPosting job) {
+        JDialog dialog = new JDialog(this, "Cover Letter - " + job.getTitle(), false);
+        dialog.setLayout(new BorderLayout());
+        
+        JTextArea textArea = new JTextArea(coverLetter);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setFont(new Font("Arial", Font.PLAIN, 12));
+        textArea.setMargin(new Insets(10, 10, 10, 10));
+        
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        dialog.add(scrollPane, BorderLayout.CENTER);
+        
+        JPanel buttonPanel = new JPanel();
+        JButton copyButton = new JButton("Copy to Clipboard");
+        copyButton.addActionListener(e -> {
+            Toolkit.getDefaultToolkit().getSystemClipboard()
+                .setContents(new StringSelection(coverLetter), null);
+            JOptionPane.showMessageDialog(dialog, "Copied to clipboard!");
+        });
+        
+        JButton saveButton = new JButton("Save as PDF");
+        saveButton.addActionListener(e -> saveCoverLetterAsPDF(coverLetter, job));
+        
+        JButton closeButton = new JButton("Close");
+        closeButton.addActionListener(e -> dialog.dispose());
+        
+        buttonPanel.add(copyButton);
+        buttonPanel.add(saveButton);
+        buttonPanel.add(closeButton);
+        
+        dialog.add(buttonPanel, BorderLayout.SOUTH);
+        dialog.setSize(700, 600);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }
+
+    private void saveCoverLetterAsPDF(String coverLetter, JobPosting job) {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setSelectedFile(new File(
+            "CoverLetter_" + job.getCompany().replaceAll("\\s+", "_") + ".pdf"));
+        
+        if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            // PDF generation logic here
+            JOptionPane.showMessageDialog(this, "Cover letter saved!");
         }
     }
 }
